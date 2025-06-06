@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TingchefeiyongDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TingchefeiyongEntity" id="tingchefeiyongMap">
+        <result property="chepaihao" column="chepaihao"/>
+        <result property="cheliangpinpai" column="cheliangpinpai"/>
+        <result property="cheweibianhao" column="cheweibianhao"/>
+        <result property="jinrushijian" column="jinrushijian"/>
+        <result property="likaishijian" column="likaishijian"/>
+        <result property="tingcheshizhang" column="tingcheshizhang"/>
+        <result property="xiaoshidanjia" column="xiaoshidanjia"/>
+        <result property="zongjia" column="zongjia"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="tupian" column="tupian"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="shouji" column="shouji"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TingchefeiyongVO" >
+		SELECT * FROM tingchefeiyong  tingchefeiyong         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TingchefeiyongVO" >
+		SELECT  tingchefeiyong.* FROM tingchefeiyong  tingchefeiyong
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TingchefeiyongView" >
+
+		SELECT  tingchefeiyong.* FROM tingchefeiyong  tingchefeiyong 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TingchefeiyongView" >
+		SELECT * FROM tingchefeiyong  tingchefeiyong <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
